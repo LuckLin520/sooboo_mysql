@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SooBoo MySQL Client — 简洁实用的 MySQL 桌面客户端</title>
+  <meta name="description" content="SooBoo MySQL Client 是一款简洁实用的桌面 MySQL 管理工具，支持 SQL 编辑、数据浏览、表结构设计、迁移同步、备份恢复、命令行终端等完整功能。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="assets/logo.png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header" id="header">
+    <div class="container header-inner">
+      <a class="brand" href="#" aria-label="SooBoo MySQL Client 首页">
+        <img src="assets/logo.png" alt="" class="brand-logo" width="36" height="36" />
+        <span class="brand-name">SooBoo</span>
+      </a>
+
+      <nav class="main-nav" aria-label="主导航">
+        <a href="#features">功能</a>
+        <a href="#workflow">工作流</a>
+        <a href="#download">下载</a>
+        <a href="#faq">常见问题</a>
+      </nav>
+
+      <div class="header-actions">
+        <a class="btn btn-ghost" href="https://github.com/LuckLin520/sooboo_mysql/releases" target="_blank" rel="noopener">更新日志</a>
+        <a class="btn btn-primary" href="#download">立即下载</a>
+      </div>
+
+      <button class="menu-toggle" aria-label="打开菜单" aria-expanded="false" aria-controls="mobile-menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <div class="mobile-menu" id="mobile-menu" hidden>
+      <nav aria-label="移动端导航">
+        <a href="#features">功能</a>
+        <a href="#workflow">工作流</a>
+        <a href="#download">下载</a>
+        <a href="#faq">常见问题</a>
+        <a class="btn btn-primary" href="#download">立即下载</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-grid" aria-hidden="true"></div>
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <div class="eyebrow">
+            <span class="eyebrow-dot"></span>
+            桌面级 MySQL 客户端
+          </div>
+          <h1 id="hero-title" class="hero-title">
+            让 MySQL<br />
+            <span class="text-gradient">管理更简单</span>
+          </h1>
+          <p class="hero-lead">
+            SooBoo MySQL Client 为开发者打造：SQL 编辑、数据浏览、表结构设计、命令行终端，以及迁移同步、备份恢复等能力，全部整合在一个轻量、快速的桌面应用中。
+          </p>
+          <div class="hero-cta">
+            <a class="btn btn-primary btn-lg" href="#download">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              立即下载
+            </a>
+            <a class="btn btn-secondary btn-lg" href="#features">
+              探索功能
+            </a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat">
+              <strong class="stat-value">10万+</strong>
+              <span class="stat-label">行数据虚拟滚动</span>
+            </div>
+            <div class="stat">
+              <strong class="stat-value">Win / Mac / Linux</strong>
+              <span class="stat-label">三端规划中</span>
+            </div>
+            <div class="stat">
+              <strong class="stat-value">数据本地存储</strong>
+              <span class="stat-label">安全可控</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-demo">
+          <div class="editor-window">
+            <div class="editor-titlebar">
+              <div class="window-controls">
+                <span class="window-dot"></span>
+                <span class="window-dot"></span>
+                <span class="window-dot"></span>
+              </div>
+              <span class="editor-filename">query.sql</span>
+            </div>
+            <div class="editor-body">
+              <div class="editor-sidebar">
+                <span>1</span>
+                <span>2</span>
+                <span>3</span>
+                <span>4</span>
+                <span>5</span>
+              </div>
+              <div class="editor-content">
+                <pre><code><span class="sql-keyword">SELECT</span> <span class="sql-operator">*</span> <span class="sql-keyword">FROM</span> <span class="sql-table">users</span>
+<span class="sql-keyword">WHERE</span> <span class="sql-column">status</span> <span class="sql-operator">=</span> <span class="sql-string">'active'</span>
+<span class="sql-keyword">LIMIT</span> <span class="sql-number">100</span><span class="cursor" aria-hidden="true">|</span></code></pre>
+              </div>
+            </div>
+            <div class="result-panel">
+              <div class="result-header">
+                <span class="result-badge">结果</span>
+                <span class="result-meta">100 行 · 0.12 秒</span>
+              </div>
+              <div class="result-table-wrap">
+                <table class="result-table">
+                  <thead>
+                    <tr>
+                      <th>id</th>
+                      <th>name</th>
+                      <th>email</th>
+                      <th>status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>1</td><td>Alice</td><td>alice@dev.io</td><td><span class="status-pill active">active</span></td></tr>
+                    <tr><td>2</td><td>Bob</td><td>bob@dev.io</td><td><span class="status-pill active">active</span></td></tr>
+                    <tr><td>3</td><td>Carol</td><td>carol@dev.io</td><td><span class="status-pill active">active</span></td></tr>
+                    <tr><td>4</td><td>David</td><td>david@dev.io</td><td><span class="status-pill active">active</span></td></tr>
+                    <tr><td>5</td><td>Eve</td><td>eve@dev.io</td><td><span class="status-pill active">active</span></td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section features" id="features" aria-labelledby="features-title">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-eyebrow">核心能力</span>
+          <h2 id="features-title" class="section-title">一套工具，覆盖 MySQL 全场景</h2>
+          <p class="section-desc">从日常查询到复杂迁移，从结构变更到备份恢复，SooBoo 把最常用的 MySQL 操作集中在一处</p>
+        </div>
+
+        <div class="features-grid">
+          <article class="feature-card reveal">
+            <div class="feature-icon feature-icon-green">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="16 18 22 12 16 6"></polyline>
+                <polyline points="8 6 2 12 8 18"></polyline>
+              </svg>
+            </div>
+            <h3>SQL 编辑器</h3>
+            <p>执行全部 / 选中 SQL，支持快捷键、SQL 美化、保存查询；SELECT 自动分页，可直接编辑单元格</p>
+          </article>
+
+          <article class="feature-card reveal">
+            <div class="feature-icon feature-icon-amber">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                <path d="M2 17l10 5 10-5"></path>
+                <path d="M2 12l10 5 10-5"></path>
+              </svg>
+            </div>
+            <h3>虚拟滚动表格</h3>
+            <p>自研 VirtualEditableTable，十万行数据流畅浏览；列宽拖拽、右键筛选、单元格编辑一气呵成</p>
+          </article>
+
+          <article class="feature-card reveal">
+            <div class="feature-icon feature-icon-cyan">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+            </div>
+            <h3>数据迁移同步</h3>
+            <p>数据传输、结构同步、数据同步三件套：对比差异、预览 DDL、按主键同步，降低迁移风险</p>
+          </article>
+
+          <article class="feature-card reveal">
+            <div class="feature-icon feature-icon-purple">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+                <polyline points="10 9 9 9 8 9"></polyline>
+              </svg>
+            </div>
+            <h3>导入导出</h3>
+            <p>库 / 表级 mysqldump 导出、mysql 导入均支持后台运行；结果集可导出 CSV / JSON / Excel / SQL</p>
+          </article>
+
+          <article class="feature-card reveal">
+            <div class="feature-icon feature-icon-rose">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+            </div>
+            <h3>备份管理</h3>
+            <p>新建备份、还原备份、提取 SQL、打开目录、删除，全流程可视化管理</p>
+          </article>
+
+          <article class="feature-card reveal">
+            <div class="feature-icon feature-icon-slate">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+              </svg>
+            </div>
+            <h3>命令行终端</h3>
+            <p>内置 MySQL 终端风格页面，暗色主题，Enter 执行、Shift+Enter 换行，习惯与终端一致</p>
+          </article>
+
+          <article class="feature-card reveal">
+            <div class="feature-icon feature-icon-orange">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 20h9"></path>
+                <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+              </svg>
+            </div>
+            <h3>表结构设计</h3>
+            <p>新建表、修改表自动加载当前结构，智能生成 ALTER 语句：重命名、删除、新增列、主键变更</p>
+          </article>
+
+          <article class="feature-card reveal">
+            <div class="feature-icon feature-icon-indigo">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+            </div>
+            <h3>对象管理</h3>
+            <p>用户、视图、函数 / 存储过程、触发器、事件一站式管理，DBA 常用操作不必再切工具</p>
+          </article>
+
+          <article class="feature-card reveal">
+            <div class="feature-icon feature-icon-blue">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path>
+              </svg>
+            </div>
+            <h3>数据源云同步</h3>
+            <p>跟随账号实时同步数据源连接，换设备无需重新填写连接信息</p>
+          </article>
+
+          <article class="feature-card reveal">
+            <div class="feature-icon feature-icon-teal">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+              </svg>
+            </div>
+            <h3>动态混合加密</h3>
+            <p>敏感连接信息采用混合加密存储，本地数据更安全，密码不落地、不泄露</p>
+          </article>
+
+          <article class="feature-card reveal">
+            <div class="feature-icon feature-icon-pink">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path>
+                <polyline points="10 13 8 15 10 17"></polyline>
+                <polyline points="16 13 18 15 16 17"></polyline>
+              </svg>
+            </div>
+            <h3>查询脚本云同步</h3>
+            <p>常用SQL语句、重要备忘脚本、注释，跟随账号实时同步</p>
+          </article>
+
+          <article class="feature-card reveal">
+            <div class="feature-icon feature-icon-lime">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+              </svg>
+            </div>
+            <h3>SQL日志查询</h3>
+            <p>数据CRUD和表结构变更按SQL类型分类记录日志，成功失败耗时一目了然</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section workflow" id="workflow" aria-labelledby="workflow-title">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-eyebrow">快速上手</span>
+          <h2 id="workflow-title" class="section-title">三步开始管理数据库</h2>
+          <p class="section-desc">无需复杂配置，打开应用即可连接、浏览、操作。</p>
+        </div>
+
+        <div class="workflow-grid">
+          <div class="workflow-step reveal">
+            <div class="step-number">01</div>
+            <h3>创建连接</h3>
+            <p>点击工具栏「连接」，填写主机、端口（默认 3306）、用户名与密码，点击「测试连接」确认可用。</p>
+          </div>
+          <div class="workflow-connector" aria-hidden="true">
+            <svg width="48" height="16" viewBox="0 0 48 16" fill="none">
+              <path d="M0 8h44m-6-6l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </div>
+          <div class="workflow-step reveal">
+            <div class="step-number">02</div>
+            <h3>浏览对象</h3>
+            <p>左侧树形面板展开数据源，即可浏览数据库、表、视图、函数、触发器等对象结构。</p>
+          </div>
+          <div class="workflow-connector" aria-hidden="true">
+            <svg width="48" height="16" viewBox="0 0 48 16" fill="none">
+              <path d="M0 8h44m-6-6l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </div>
+          <div class="workflow-step reveal">
+            <div class="step-number">03</div>
+            <h3>查询与编辑</h3>
+            <p>打开 SQL 编辑器执行查询，或在数据表中直接增删改；所有操作记录自动进入操作日志。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section power" aria-labelledby="power-title">
+      <div class="container power-inner">
+        <div class="power-copy reveal">
+          <span class="section-eyebrow">为效率而生</span>
+          <h2 id="power-title" class="section-title">本地运行，数据不离桌</h2>
+          <p>SooBoo 不依赖浏览器网络，连接信息保存在本地 JSON，查询结果即时渲染。支持断线重连、查询中断、后台导入导出，长时间任务也能安心处理。</p>
+          <ul class="checklist">
+            <li>连接池在主进程管理，稳定高效</li>
+            <li>执行中的查询可随时中断</li>
+            <li>后台任务完成后系统通知 + 任务栏闪烁</li>
+            <li>已保存查询与操作日志本地持久化</li>
+          </ul>
+        </div>
+        <div class="power-visual reveal">
+          <div class="code-block">
+            <div class="code-header">
+              <span class="code-dot"></span>
+              <span class="code-dot"></span>
+              <span class="code-dot"></span>
+              <span class="code-lang">mysql</span>
+            </div>
+            <pre><code><span class="sql-keyword">ALTER TABLE</span> <span class="sql-table">orders</span>
+  <span class="sql-keyword">ADD COLUMN</span> <span class="sql-column">paid_at</span> <span class="sql-type">DATETIME</span> <span class="sql-keyword">NULL</span>
+  <span class="sql-keyword">AFTER</span> <span class="sql-column">amount</span>;
+
+<span class="sql-comment">-- 结构同步自动生成的 diff</span>
+<span class="sql-keyword">UPDATE</span> <span class="sql-table">orders</span>
+  <span class="sql-keyword">SET</span> <span class="sql-column">paid_at</span> <span class="sql-operator">=</span> <span class="sql-string">'2026-07-08 10:00:00'</span>
+  <span class="sql-keyword">WHERE</span> <span class="sql-column">id</span> <span class="sql-operator">=</span> <span class="sql-number">42</span>;</code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section download" id="download" aria-labelledby="download-title">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-eyebrow">立即体验</span>
+          <h2 id="download-title" class="section-title">选择你的平台</h2>
+          <p class="section-desc">Windows 版本已可下载体验，macOS 与 Linux 版本正在筹备中，敬请期待。</p>
+        </div>
+
+        <div class="download-grid">
+          <a class="download-card reveal" href="https://github.com/LuckLin520/sooboo_mysql/releases" target="_blank" rel="noopener" data-os="win">
+            <div class="download-icon">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801"/>
+              </svg>
+            </div>
+            <h3>Windows</h3>
+            <p>NSIS 安装包，内置 mysqldump / mysql 二进制</p>
+            <span class="download-tag">.exe 安装程序</span>
+          </a>
+
+          <div class="download-card reveal download-card-soon" data-os="mac">
+            <div class="download-icon">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+              </svg>
+            </div>
+            <h3>macOS</h3>
+            <p>DMG 分发正在筹备中，敬请期待</p>
+            <span class="download-tag download-tag-soon">敬请期待</span>
+          </div>
+
+          <div class="download-card reveal download-card-soon" data-os="linux">
+            <div class="download-icon">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12.504 0c-.155 0-.315.008-.48.021-4.226.333-3.105 4.807-3.17 6.298-.076 1.092-.3 1.953-1.05 3.02-.885 1.051-2.127 2.75-2.716 4.521-.278.832-.41 1.684-.287 2.489.117.762.495 1.443 1.078 1.953.584.51 1.329.858 2.129.997.797.138 1.653.074 2.48-.198.827-.271 1.625-.714 2.32-1.304.695-.59 1.28-1.32 1.68-2.142.4-.823.61-1.73.61-2.67 0-.94-.21-1.847-.61-2.67-.4-.822-.985-1.552-1.68-2.142-.695-.59-1.493-1.033-2.32-1.304-.205-.067-.41-.124-.615-.171.26-.173.52-.35.772-.542 1.04-.793 1.93-1.79 2.59-2.916.66-1.126 1.08-2.385 1.21-3.674.026-.257.04-.51.04-.754 0-.578-.085-1.104-.252-1.544-.168-.44-.42-.795-.74-1.018-.32-.223-.703-.337-1.138-.337h-.002z"/>
+              </svg>
+            </div>
+            <h3>Linux</h3>
+            <p>AppImage 格式正在筹备中，敬请期待</p>
+            <span class="download-tag download-tag-soon">敬请期待</span>
+          </div>
+        </div>
+
+        <div class="download-note reveal">
+          <p>Windows 安装包已上架 Releases，macOS / Linux 版本开发中。下载链接指向 GitHub Releases。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section faq" id="faq" aria-labelledby="faq-title">
+      <div class="container faq-inner">
+        <div class="faq-header reveal">
+          <span class="section-eyebrow">常见问题</span>
+          <h2 id="faq-title" class="section-title">有问题？先看这里</h2>
+        </div>
+
+        <div class="faq-list reveal">
+          <details class="faq-item">
+            <summary>SooBoo 支持哪些平台？</summary>
+            <p>目前 Windows 版本已可下载使用，macOS 与 Linux 版本正在筹备中，敬请期待。</p>
+          </details>
+          <!-- <details class="faq-item">
+            <summary>macOS / Linux 上为什么需要单独安装 mysql-client？</summary>
+            <p>Mac 需要区分 arm64 / x64、处理 dylib rpath 且未签名二进制会被 Gatekeeper 拦截；Linux 发行版差异大。因此 Mac / Linux 默认走 Homebrew / apt / yum 等官方包管理器路线，安装更可靠。</p>
+          </details> -->
+          <details class="faq-item">
+            <summary>SooBoo 是免费吗？</summary>
+            <p>大部分常用功能无需登录即可免费使用；数据/结构传输同步等高级功能需要登录或者升级 PRO 后使用。</p>
+          </details>
+          <details class="faq-item">
+            <summary>连接信息保存在哪里？</summary>
+            <p>未登录时，所有连接配置、已保存查询、操作日志均通过系统级加密保存在本地；登录后采用动态密钥混合模式加密，在保证安全的前提下实现云同步。</p>
+          </details>
+          <details class="faq-item">
+            <summary>支持哪些 MySQL 版本？</summary>
+            <p>支持主流 MySQL 5.7 / 8.0 及以上版本，以及兼容 MySQL 协议的 MariaDB 等。</p>
+          </details>
+          <details class="faq-item">
+            <summary>如何导入大体积 SQL 文件？</summary>
+            <p>通过「文件 → 导入」选择 SQL 文件，任务会在后台运行。即使关闭弹窗，导入仍会继续，完成后会通过系统通知提醒。</p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img src="assets/logo.png" alt="" width="28" height="28" />
+        <span>SooBoo MySQL Client</span>
+      </div>
+      <p class="footer-copy">让 MySQL 管理更简单</p>
+      <div class="footer-links">
+        <a href="https://github.com/LuckLin520/sooboo_mysql/releases" target="_blank" rel="noopener">更新日志</a>
+        <a href="https://github.com/LuckLin520/sooboo_mysql/issues" target="_blank" rel="noopener">反馈问题</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
