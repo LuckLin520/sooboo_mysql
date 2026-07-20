@@ -38,6 +38,88 @@ document.addEventListener('DOMContentLoaded', () => {
 
   revealElements.forEach(el => revealObserver.observe(el));
 
+  // Showcase carousel
+  const carousel = document.querySelector('[data-carousel]');
+  if (carousel) {
+    const track = carousel.querySelector('.carousel-track');
+    const slides = Array.from(carousel.querySelectorAll('.carousel-slide'));
+    const prevBtn = carousel.querySelector('.carousel-prev');
+    const nextBtn = carousel.querySelector('.carousel-next');
+    const dotsWrap = carousel.querySelector('.carousel-dots');
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let current = 0;
+    let timer = null;
+
+    const dots = slides.map((_, i) => {
+      const dot = document.createElement('button');
+      dot.type = 'button';
+      dot.className = 'carousel-dot';
+      dot.setAttribute('aria-label', `第 ${i + 1} 张截图`);
+      dot.addEventListener('click', () => { goTo(i); restart(); });
+      dotsWrap.appendChild(dot);
+      return dot;
+    });
+
+    function goTo(i) {
+      current = (i + slides.length) % slides.length;
+      track.style.transform = `translateX(-${current * 100}%)`;
+      dots.forEach((dot, di) => {
+        dot.classList.toggle('is-active', di === current);
+        dot.setAttribute('aria-selected', String(di === current));
+      });
+    }
+
+    function stop() {
+      if (timer) {
+        clearInterval(timer);
+        timer = null;
+      }
+    }
+
+    function start() {
+      if (reduceMotion || timer || document.hidden) return;
+      timer = setInterval(() => goTo(current + 1), 5000);
+    }
+
+    function restart() {
+      stop();
+      start();
+    }
+
+    prevBtn.addEventListener('click', () => { goTo(current - 1); restart(); });
+    nextBtn.addEventListener('click', () => { goTo(current + 1); restart(); });
+
+    carousel.addEventListener('mouseenter', stop);
+    carousel.addEventListener('mouseleave', start);
+    carousel.addEventListener('focusin', stop);
+    carousel.addEventListener('focusout', start);
+    document.addEventListener('visibilitychange', () => (document.hidden ? stop() : start()));
+
+    carousel.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') { goTo(current - 1); restart(); }
+      if (e.key === 'ArrowRight') { goTo(current + 1); restart(); }
+    });
+
+    // Touch swipe (tap with small movement still opens the image link)
+    let touchX = null;
+    track.addEventListener('touchstart', (e) => {
+      touchX = e.touches[0].clientX;
+      stop();
+    }, { passive: true });
+    track.addEventListener('touchend', (e) => {
+      if (touchX === null) return;
+      const dx = e.changedTouches[0].clientX - touchX;
+      if (Math.abs(dx) > 50) {
+        goTo(current + (dx < 0 ? 1 : -1));
+      }
+      touchX = null;
+      start();
+    }, { passive: true });
+
+    goTo(0);
+    start();
+  }
+
   // Typing animation for hero SQL editor
   const codeElement = document.querySelector('.editor-content code');
   if (codeElement && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {

@@ -21,6 +21,7 @@
 
       <nav class="main-nav" aria-label="主导航">
         <a href="#features">功能</a>
+        <a href="#showcase">界面</a>
         <a href="#workflow">工作流</a>
         <a href="#download">下载</a>
         <a href="#faq">常见问题</a>
@@ -43,6 +44,7 @@
     <div class="mobile-menu" id="mobile-menu" hidden>
       <nav aria-label="移动端导航">
         <a href="#features">功能</a>
+        <a href="#showcase">界面</a>
         <a href="#workflow">工作流</a>
         <a href="#download">下载</a>
         <a href="#faq">常见问题</a>
@@ -295,6 +297,65 @@
             <h3>SQL日志查询</h3>
             <p>数据CRUD和表结构变更按SQL类型分类记录日志，成功失败耗时一目了然</p>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section showcase" id="showcase" aria-labelledby="showcase-title">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-eyebrow">界面展示</span>
+          <h2 id="showcase-title" class="section-title">迁移同步三件套，差异一目了然</h2>
+          <p class="section-desc">数据传输、数据同步、结构同步全程向导式操作，对比结果可视化呈现，执行前心中有数</p>
+        </div>
+
+        <div class="carousel reveal" data-carousel aria-roledescription="轮播" aria-label="应用界面截图展示">
+          <div class="carousel-viewport">
+            <div class="carousel-track">
+              <figure class="carousel-slide">
+                <a class="carousel-shot" href="assets/1.webp" target="_blank" rel="noopener" title="点击查看原图">
+                  <img src="assets/1.webp" alt="数据传输向导界面：源数据库与目标数据库连接信息并排展示" width="700" height="406" draggable="false" />
+                </a>
+                <figcaption class="carousel-caption">
+                  <h3><span class="showcase-index">01</span>数据传输</h3>
+                  <p>源与目标连接并排展示，主机、端口、版本信息一目了然，确认无误再开始传输</p>
+                </figcaption>
+              </figure>
+
+              <figure class="carousel-slide">
+                <a class="carousel-shot" href="assets/2.webp" target="_blank" rel="noopener" title="点击查看原图">
+                  <img src="assets/2.webp" alt="数据同步界面：表级插入、更新、删除差异统计与行级数据对比预览" loading="lazy" width="700" height="406" draggable="false" />
+                </a>
+                <figcaption class="carousel-caption">
+                  <h3><span class="showcase-index">02</span>数据同步</h3>
+                  <p>按主键对比插入 / 更新 / 删除差异，行级数据逐条勾选，同步范围精准可控</p>
+                </figcaption>
+              </figure>
+
+              <figure class="carousel-slide">
+                <a class="carousel-shot" href="assets/3.webp" target="_blank" rel="noopener" title="点击查看原图">
+                  <img src="assets/3.webp" alt="结构同步界面：对象列表勾选与 CREATE TABLE DDL 差异高亮对比" loading="lazy" width="700" height="406" draggable="false" />
+                </a>
+                <figcaption class="carousel-caption">
+                  <h3><span class="showcase-index">03</span>结构同步</h3>
+                  <p>对象列表按需勾选，DDL 差异左右对照高亮预览，变更脚本执行前心中有数</p>
+                </figcaption>
+              </figure>
+            </div>
+
+            <button class="carousel-btn carousel-prev" type="button" aria-label="上一张">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="15 18 9 12 15 6"></polyline>
+              </svg>
+            </button>
+            <button class="carousel-btn carousel-next" type="button" aria-label="下一张">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </button>
+          </div>
+
+          <div class="carousel-dots" role="tablist" aria-label="选择截图"></div>
         </div>
       </div>
     </section>
