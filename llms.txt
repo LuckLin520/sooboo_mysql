@@ -1,0 +1,40 @@
+# SooBoo MySQL Client
+
+> SooBoo MySQL Client 是一款简洁实用的桌面 MySQL 数据库管理工具（基于 Electron + React），面向中国开发者，中文界面。SQL 编辑、数据浏览、表结构设计、迁移同步、备份恢复、命令行终端等能力整合在一个轻量、快速的桌面应用中。Windows 版本已开放下载，macOS 与 Linux 版本筹备中。
+
+## 核心功能
+
+- SQL 编辑器：执行全部/选中 SQL、快捷键、SQL 美化、保存查询；SELECT 自动分页，可直接编辑单元格
+- 虚拟滚动表格：自研 VirtualEditableTable，十万行数据流畅浏览；列宽拖拽、右键筛选、单元格编辑
+- 数据迁移同步三件套：数据传输、结构同步、数据同步；对比差异、预览 DDL、按主键同步
+- 导入导出：库/表级 mysqldump 导出、mysql 导入均支持后台运行；结果集可导出 CSV / JSON / Excel / SQL
+- 备份管理：新建备份、还原备份、提取 SQL、打开目录、删除，全流程可视化
+- 命令行终端：内置 MySQL 终端风格页面，暗色主题
+- 表结构设计：新建表、修改表智能生成 ALTER 语句
+- 对象管理：用户、视图、函数/存储过程、触发器、事件一站式管理
+- 数据源与查询脚本云同步：跟随账号实时同步，换设备无需重填连接信息
+- 安全：连接信息动态混合加密存储，本地数据安全可控
+- SQL 日志：CRUD 与表结构变更按 SQL 类型分类记录
+
+## 平台与兼容性
+
+- 支持 MySQL 5.7 / 8.0 及以上版本，以及兼容 MySQL 协议的 MariaDB
+- Windows 版本已发布（NSIS 安装包，内置 mysqldump / mysql 二进制）
+- macOS（DMG）与 Linux（AppImage）版本正在筹备中
+
+## 收费模式
+
+- 大部分常用功能无需登录即可免费使用
+- 数据/结构传输同步等高级功能需要登录或升级 PRO 后使用
+
+## 数据安全
+
+- 未登录时，连接配置、已保存查询、操作日志通过系统级加密保存在本地
+- 登录后采用动态密钥混合模式加密，在保证安全的前提下实现云同步
+- 数据本地存储，不依赖浏览器网络
+
+## 链接
+
+- 官网：https://mysql.sooboo.top/
+- 下载与更新日志（GitHub Releases）：https://github.com/LuckLin520/sooboo_mysql/releases
+- 问题反馈（GitHub Issues）：https://github.com/LuckLin520/sooboo_mysql/issues

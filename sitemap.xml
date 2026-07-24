@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://mysql.sooboo.top/</loc>
+    <lastmod>2026-07-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://mysql.sooboo.top/assets/1.webp</image:loc>
+      <image:title>SooBoo 数据传输向导界面</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://mysql.sooboo.top/assets/2.webp</image:loc>
+      <image:title>SooBoo 数据同步差异对比界面</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://mysql.sooboo.top/assets/3.webp</image:loc>
+      <image:title>SooBoo 结构同步 DDL 对比界面</image:title>
+    </image:image>
+  </url>
+</urlset>

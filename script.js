@@ -196,11 +196,6 @@ document.addEventListener('DOMContentLoaded', () => {
       if (card.dataset.os === detectedOS && !card.classList.contains('download-card-soon')) {
         card.style.borderColor = 'var(--color-primary)';
         card.style.boxShadow = 'var(--shadow-glow)';
-
-        const tag = card.querySelector('.download-tag');
-        if (tag) {
-          tag.textContent = '推荐下载 · ' + tag.textContent;
-        }
       }
     });
   }
